@@ -182,23 +182,6 @@ class Bullet(Base):
         elif self.authority_type == 'enemy':
             self.y += 8
 
-def plane_destroy(plane):
-    """回收被击中的敌机的对象"""
-    global hero
-    global hit_score
-    global enemy0_list
-    global enemy1_list
-    global enemy2_list
-    if plane in enemy0_list: #回收对象为enemy0
-        enemy0_list.remove(plane)
-    elif plane in enemy1_list:
-        enemy1_list.remove(plane)
-    elif plane in enemy2_list:
-        enemy2_list.remove(plane)
-    elif plane == hero:#回收对象为hero
-        hit_score = 0
-        hero = None
-
 def pause(player):
     button_list = [button(player.screen, 160, 200, 160, 100, 'Back'), 
                 button(player.screen, 160, 300, 160, 100, 'Restart'), 
